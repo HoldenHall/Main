@@ -1,0 +1,9 @@
+C:\Users\Holden\source\repos\WindowsFormsApp3\WindowsFormsApp3\bin\Release\WindowsFormsApp3.exe.config
+C:\Users\Holden\source\repos\WindowsFormsApp3\WindowsFormsApp3\bin\Release\WindowsFormsApp3.exe
+C:\Users\Holden\source\repos\WindowsFormsApp3\WindowsFormsApp3\bin\Release\WindowsFormsApp3.pdb
+C:\Users\Holden\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Release\WindowsFormsApp3.UIL.resources
+C:\Users\Holden\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Release\WindowsFormsApp3.Properties.Resources.resources
+C:\Users\Holden\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Release\UIL File Transfer.csproj.GenerateResource.Cache
+C:\Users\Holden\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Release\UIL File Transfer.csproj.CoreCompileInputs.cache
+C:\Users\Holden\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Release\WindowsFormsApp3.exe
+C:\Users\Holden\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Release\WindowsFormsApp3.pdb
