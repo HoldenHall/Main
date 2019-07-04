@@ -1,0 +1,201 @@
+%Holden Hall
+%4-30-19
+%Copyright 2014 Jean-Philippe Eisenbarth
+%This program is free software: you can 
+%redistribute it and/or modify it under the terms of the GNU General Public 
+%License as published by the Free Software Foundation, either version 3 of the 
+%License, or (at your option) any later version.
+%This program is distributed in the hope that it will be useful,but WITHOUT ANY 
+%WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A 
+%PARTICULAR PURPOSE. See the GNU General Public License for more details.
+%You should have received a copy of the GNU General Public License along with 
+%this program.  If not, see <http://www.gnu.org/licenses/>.
+
+%Based on the code of Yiannis Lazarides
+%http://tex.stackexchange.com/questions/42602/software-requirements-specification-with-latex
+%http://tex.stackexchange.com/users/963/yiannis-lazarides
+%Also based on the template of Karl E. Wiegers
+%http://www.se.rit.edu/~emad/teaching/slides/srs_template_sep14.pdf
+%http://karlwiegers.com
+\documentclass{scrreprt}
+\usepackage{tabulary}
+\usepackage{listings}
+\usepackage{underscore}
+\usepackage{setspace}
+\usepackage[bookmarks=true]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\hypersetup{
+    bookmarks=false,    % show bookmarks bar?
+    pdftitle={Software Requirement Specification},    % title
+    pdfauthor={Jean-Philippe Eisenbarth},                     % author
+    pdfsubject={TeX and LaTeX},                        % subject of the document
+    pdfkeywords={TeX, LaTeX, graphics, images}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,       % color of internal links
+    citecolor=black,       % color of links to bibliography
+    filecolor=black,        % color of file links
+    urlcolor=purple,        % color of external links
+    linktoc=page            % only page is linked
+}%
+\def\myversion{2.0 }
+\date{}
+%\title{%
+
+%}
+\usepackage{hyperref}
+\begin{document}
+
+\begin{flushright}
+    \rule{16cm}{5pt}\vskip1cm
+    \begin{bfseries}
+        \Huge{SOFTWARE REQUIREMENTS\\ SPECIFICATION}\\
+        \vspace{1.9cm}
+        for\\
+        \vspace{1.9cm}
+        Quicker Queue\\
+        \vspace{1.9cm}
+        \LARGE{Version \myversion}\\
+        \vspace{1.7cm}
+        Prepared by Holden Hall, Luong Dinh, Garret Gulker\\
+        \vspace{1.7cm}
+        Shockwave Tech\\
+        \vspace{1.7cm}
+        \today\\
+    \end{bfseries}
+\end{flushright}
+
+\tableofcontents
+
+\chapter*{Revision History}
+\begin{center}
+    \begin{tabulary}{1.2\textwidth}{LLLL}
+        Version & Name & Date & Changes\\                                             \\
+      \hline
+      Revision 1.0 & Holden Hall & 2/21/19 & Original Document\\
+      \hline
+      Revision 2.0 & Holden Hall & 4/30/19 & Added Team members to title page, Added Revision History Page, Added Appendix\\
+      \hline
+    \end{tabulary}  
+  \end{center}
+
+\chapter{Introduction}
+
+\section{Purpose}
+The purpose of Quicker Queue is to assist different businesses manage the workflow of customers.
+Quicker Queue eases both the business, and customer side of priority queue systems by using instant email notifications. Customers will be able to make and edit appointments on the system.
+
+\section{Project Scope}
+Quicker Queue is for designed for businesses who need a priority queue system, or want to update from their old one.
+Quicker Queue has the benefit of being able to be customized for specific business needs.The system will use it's secured database 
+to collect user information and notify them with stored email addresses. Personal information will be encrypted using AES encryption.
+
+\section{Acronyms, Abbreviations, Definitions}
+AES - Advanced Encryption Standard\\
+Namespace - Container that holds premade classes allowing faster and easier programming.\\
+Priority Queue System - System similar to a waiting list or line. Allows businesses to keep track of customers based on business' set standards.\\
+Encryption - Algorithm designed to obfuscate important or private information.\\
+Decryption - Algorithm designed to take encrypted text and return the original text.
+
+
+\section{References}
+http://www.mimekit.net/ - possible library for notifications\\
+docs.microsoft.com/en-us/dotnet/csharp/ - C\# and .Netframework documentation\\
+https://github.com/jpeisenbarth/SRS-Tex - SRS IEEE LaTex template used
+
+\section{Outline}
+Section 2 will go over the general design of the product and how it works. Section 3 will go into the specifics and looks of the Interfaces, system requirements, functional requirements, and limitations.
+
+
+\chapter{Overall Description}
+
+\section{Context of Product}
+This system is designed to improve on current priority systems. One way Quicker Queue beats other priority queue systems is the instant notifications.
+The users are notified via email when their appointment is ready. Quicker Queue will allow customers to search for different businesses using the app, ensuring higher application usage.\\
+
+\section{Product Functions}
+Product Functions include: Notifying a user when they're next in the queue by email. Storing encrypted user data in a database. Allowing a customer or business to register/login to the system. Allowing customers to edit their appointment or check the queue. Allowing the business to manage the queue. Allowing the business to customize the app.
+
+\section{User Classes and Characteristics}
+There are two user classes that inherit from the superclass User, Customer and Business. The customer class has the ability to make and edit appointments, while being able to check the queue.
+Business manages the queue and has the ability to notify, delete, or add an appointment.
+
+\section{Design and Implementation Constraints}
+The User Interface of Quicker Queue is constrained to C\# and the .Netframework. The application is constrained to scheduled iterations, where the product needs a certain amount of features each iteration.
+With April 18, 23, 25 being the final scheduled date. The product is constrained to work on the windows operating system.
+\section{Assumptions and Dependencies}
+
+Planned features such as notifications and encryption are dependent on 2 .Netframework namespaces(System.Security.Cryptography and System.Net.Mail) However it is possible that instead of using System.Net.Mail we use mimekit.
+We are assuming that the client's computer has the up to date .Netframework to run the C\# code.
+
+
+\chapter{Specific Requirements}
+
+\section{Functional Requirements}
+
+\subsection{Functional Requirement 1}
+System must let customers to see all available businesses using our platform and their information.\\ This will allow the customer to have an higher ease of access when using the application. The customer will use the application more frequently if they need the system for more than one business. The system will allow customers to view and edit their information.
+\subsection{Functional Requirement 2}
+Customers must be able to search available businesses.\\ Similar to functional requirement 1, customer needs to be able to search for different businesses to be able to make appointments. Customer should be able to do different searches to find different businesses.
+
+\subsection{Functional Requirement 3}
+Businesses must be able to see all customers queued for their business and information necessary for their specific service.\\ A business needs to be able to view and manage their queue. The point of the system is to help manage customer flow. This allows the business to manage mistakes and appointments.
+\subsection{Functional Requirement 4}
+Businesses must be able to notify any queued customer through the system.\\ One of the major requirements of Quicker Queue is a fast notification system to put it above other Queue systems. Information needed to notify customers is stored in the azure database.
+\subsection{Functional Requirement 5}
+Customers and Businesses must be able to edit appointments.\\ If a customer makes a mistake or has a change of plans they must be able to edit or delete their appointment. The business also must be able to edit appointments in case there is a mistake or a customer don't show up.
+
+\section{External Interface Requirements}
+
+\subsection{User Interfaces}
+
+The interface will include  a simple, yet stylish design to for easy usage. Information about the application like "help" or "about" will be able 
+on a menu bar at the top of the application. The Startup screen will be a Quicker Queue Logo above a register and login button. Standard Error Messages will be thrown
+when unexpected things happen, If the error is fixable, it can be sent back to Shockwave Tech to be fixed in maintenance.
+
+
+\subsection{Hardware Interfaces}
+Quicker Queue runs on Windows computers, and currently has no other hardware componets.
+
+\subsection{Software Interfaces}
+The product stores encrypted user data in a azure database. User data includes: names, usernames, email usernames, passwords. Business data will include: name, phone number, hours, Address, City, State. The system must run on windows most likely windows 7. We have yet to test on older versions of Windows.
+The application will use at least one .net namespace, possibly two. This will depend on how well the notification system works. If the mail namespace does not work we will use the mimekit library instead. We are working on NETFramework,Version v4.6.1.
+
+\subsection{Communications Interfaces}
+The system will send emails through a SMTP client. The system will also send and retrieve data through a database, so an internet connection is required. Personal information will be encrypted using AES encryption.
+
+\section{Performance Requirements}
+The product shall be able to run on a windows 7 or higher machine. The machine will require an internet connection to notify customers and access the database.
+
+\section{Design Constraints}
+
+\subsection{Standards Compliance}
+Shockwave Tech follows the standards set by Doctor Eduardo Colmenares, and the Midwestern State University Computer Science Department.
+\subsection{Hardware Limitations}
+Client will need a windows 7 or higher machine with a working internet connection.
+
+\section{Attributes}
+
+\subsection{Availability}
+The goal of the product is to be available to all businesses to ease their customer flow.
+
+\subsection{Security}
+Quicker Queue was designed with security in mind, we will secure user data using AES encryption. In case of a data breach, criminals will not have access to private user information.
+
+\subsection{Maintainability}
+Shockwave Tech will maintain the system and fix any problems businesses come across. We also have the ability to update the software to satisfy the needs of more specific businesses if the current customization options are not fit for a client.
+
+\section{Other Requirements}
+
+\subsection{Database}
+Quicker Queue requires an Azure database
+
+\chapter{Appendix}
+\doublespacing
+Most businesses have a system that forces you to wait in line, and leaves the possibility for employes to forget people. 
+Even If they do remember you, you might not hear them call your name. 
+That's why Quicker Queue was designed to make the overall queueing process a more pleasurable experience, for both costumer and business. 
+Quicker Queue allows you to make an account that works for any business using Quicker Queue. Any user can use their account to make appointments, check business queues, search for businesses, add favorites, and edit their account.
+A business can easily manage their business throught the Business homepage. Which will allow them to add,delete or notify costumers.
+A costumer is notified by email, when a business clicks the notify button. When a customer or business wants to edit their account they can change information like their password, email, username or delete their account.
+\end{document}
